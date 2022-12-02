@@ -17,7 +17,7 @@ const products = [
     category: "Karty Graficzne",
     photo:"./photo/rx6800.png",
     alt:" opis fonetyczny",
-    price: 3900,
+    price: 3900.99,
 },
 {
     id:2,
