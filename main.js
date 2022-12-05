@@ -103,11 +103,9 @@ searchBarInput.addEventListener("input", (e) => {
 const addToCart = (id) => {
   cart.push(currentProducts.at(id));
   const cartSum = cart.reduce((sum, product) => {
-    return (sum += product.price)
+    return (sum += product.price - (product.saleAmount ? product.saleAmount : 0));
   }, 0);
   
   const cartAmount = document.querySelector(".cartAmountSpan");
-  cartAmount.innerHTML = cartSum;
-
-  console.log(cartSum);
+  cartAmount.innerHTML = `${cartSum.toFixed(2)} zł`;
 };

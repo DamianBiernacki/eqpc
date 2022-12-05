@@ -19,6 +19,7 @@ header{
     position: sticky;
     top: 0;
     z-index: 1;
+    text-shadow: black 2px 2px 2px;
 }
 
 
@@ -63,6 +64,12 @@ header{
     display: flex;
 }
 
+.headerBasket a {
+    font-size: 40px;
+    color: rgb(70, 90, 180);
+    text-decoration: none;
+}
+
 .banner{
     position: relative;
     text-align: center;
@@ -75,6 +82,7 @@ header{
     transform: translate(-50%, -50%);
     font-size: 90px;
     color: white;
+    text-shadow: rgb(70, 90, 180) 3px 3px 3px;
 }
 
 .categories{
@@ -232,4 +240,10 @@ header{
 
 .empty.active{
     display: block;
+}
+
+.headerTitleBusket a{
+    text-decoration: none;
+    color: rgb(70, 90, 180);
+    text-shadow: black 2px 2px 2px;
 }
