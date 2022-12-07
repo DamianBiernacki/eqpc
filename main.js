@@ -1,6 +1,7 @@
 let currentProducts = products;
 let categories = new Set();
 const cart= [];
+const CART_LOCALSTORAGE_KEY = "cart";
 
 const productSection = document.querySelector(".products");
 
@@ -30,8 +31,46 @@ const renderProducts = (items) => {
       }
     });
 
+
+    // function cartNumbers(){
+    //     let productNumbers = localStorage.getItem('cartNumbers');
+    //     productNumbers = parseInt(productNumbers);
+
+    //     if(productNumbers){
+    //         localStorage.setItem('cartNumbers', productNumbers + 1);
+    //     } else {
+    //         localStorage.setItem('cartNumbers', 1);
+    //     }
+    // };
+
+    const addCart = (id, quantity) =>{
+        const current = localStorage.getItem(CART_LOCALSTORAGE_KEY);
+        const productToAdd = product.find((products) => products.id === id);
+
+        let newCart = [];
+
+        if(current) {
+            const cart = JSON.parse(current);
+            const existingProduct = cart.find((products) => products.id === id);
+            
+            if (existingProduct) {
+                newCart = cart.map((products) => 
+                products.id === id
+                    ? {...products, quantity: (products.quantity += quantity)}
+                    : products
+                );
+            } else {
+                newCart = [...cart, {...productToAdd, quantity}];
+            }
+        } else {
+            newCart = [{...productToAdd, quantity}];
+        }
+        localStorage.setItem(CART_LOCALSTORAGE_KEY, JSON.stringify(newCart));
+    };
+
     productSection.appendChild(newProduct);
   });
+  
 };
 
 const renderCategories = (items) => {
@@ -108,4 +147,5 @@ const addToCart = (id) => {
   
   const cartAmount = document.querySelector(".cartAmountSpan");
   cartAmount.innerHTML = `${cartSum.toFixed(2)} zł`;
+
 };

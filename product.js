@@ -9,6 +9,7 @@ const products = [
     price: 2500,
     sale: 1,
     saleAmount: 300.01,
+    inCart: 0,
 },
 {
     id:1,
@@ -18,6 +19,7 @@ const products = [
     photo:"./photo/rx6800.png",
     alt:" opis fonetyczny",
     price: 3900.99,
+    inCart: 0,
 },
 {
     id:2,
@@ -27,6 +29,7 @@ const products = [
     photo:"./photo/B660.png",
     alt:" opis fonetyczny",
     price: 550,
+    inCart: 0,
 },
 {
     id:3,
@@ -38,5 +41,6 @@ const products = [
     price: 750,
     sale: 1,
     saleAmount: 50,
+    inCart: 0,
 }
 ]
