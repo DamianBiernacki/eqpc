@@ -8,8 +8,8 @@ const products = [
     alt:" opis fonetyczny",
     price: 2500,
     sale: 1,
-    saleAmount: 300.01,
-    inCart: 0,
+    saleAmount: 300,
+    quantity: 1,
 },
 {
     id:1,
@@ -18,8 +18,8 @@ const products = [
     category: "Karty Graficzne",
     photo:"./photo/rx6800.png",
     alt:" opis fonetyczny",
-    price: 3900.99,
-    inCart: 0,
+    price: 3900,
+    quantity: 1,
 },
 {
     id:2,
@@ -29,7 +29,7 @@ const products = [
     photo:"./photo/B660.png",
     alt:" opis fonetyczny",
     price: 550,
-    inCart: 0,
+    quantity: 1,
 },
 {
     id:3,
@@ -41,6 +41,18 @@ const products = [
     price: 750,
     sale: 1,
     saleAmount: 50,
-    inCart: 0,
+    quantity: 1,
+},
+{
+    id:4,
+    name:"Procesor Intel Core i5-11400F, 2.6 GHz, 12 MB, BOX",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque amet, culpa blanditiis rem cupiditate voluptatibus porro sapiente, facilis harum eveniet repellendus accusamus architecto iusto cumque quibusdam? Vitae totam vel nam.",
+    category: "Procesor",
+    photo:"./photo/inteli5.png",
+    alt:" opis fonetyczny",
+    price: 750,
+    sale: 1,
+    saleAmount: 50,
+    quantity: 1,
 }
 ]
