@@ -149,13 +149,28 @@ function totalCost(total){
 function displayCart(){
   let cartItems = localStorage.getItem("cart");
   cartItems = JSON.parse(cartItems);
-  console.log(cartItems);
-  let productContainer = document.querySelector(".containterForProucts");
+  let productContainer = document.querySelector(".products");
   if( cartItems && productContainer ) {
-    console.log("running");
+    productContainer.innerHTML = '';
+    Object.values(cartItems).map(item =>{
+      productContainer.innerHTML += `
+      <div class="product">
+      <img src="${item.photo}">
+      <span>${item.name}</span>
+      </div>
+      <div class="price">${item.price}</div>
+      <div class="quantity">${item.quantity}</div>
+      `
+    });
+
+    productContainer.innerHTML += `
+    <div class="totalBasketCost">
+      <h4 class="basketTittle">Suma</h4>
+      <h4 class="basketCost">${cartCost}</h4>
+    `
   }
 }
 
 
 
-displayCart();
+//displayCart();
